@@ -1,3 +1,4 @@
+services:
   - type: web
     name: strapi
     env: node
@@ -5,13 +6,14 @@
     buildCommand: yarn install && yarn build
     startCommand: rsync -a public/ /data/public/ && yarn start
     healthCheckPath: /_health
+    autoDeploy: false
     disk:
       name: strapi-data
       mountPath: /data
       sizeGB: 1
     envVars:
       - key: NODE_VERSION
-        value: v20.15.1
+        value: ~20.15.1
       - key: NODE_ENV
         value: production
       - key: DATABASE_FILENAME
@@ -21,6 +23,4 @@
       - key: ADMIN_JWT_SECRET
         generateValue: true
       - key: APP_KEYS
-        generateValue: true
-      - key: API_TOKEN_SALT
         generateValue: true
