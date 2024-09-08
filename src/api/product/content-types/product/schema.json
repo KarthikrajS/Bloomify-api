@@ -66,6 +66,15 @@
         "featured",
         "trending"
       ]
+    },
+    "tags": {
+      "type": "text"
+    },
+    "oldPrice": {
+      "type": "integer"
+    },
+    "additionalInfo": {
+      "type": "text"
     }
   }
 }

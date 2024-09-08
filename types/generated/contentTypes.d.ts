@@ -914,6 +914,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::sub-category.sub-category'
     >;
     type: Attribute.Enumeration<['normal', 'featured', 'trending']>;
+    tags: Attribute.Text;
+    oldPrice: Attribute.Integer;
+    additionalInfo: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
